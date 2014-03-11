@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 16, 2013 2:55:43 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="ctr.stuba.xss.hbm.XssSensor" table="xss_sensor" catalog="xss_stuba">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" not-null="true" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="65535" />
+        </property>
+        <property name="type" type="string">
+            <column name="type" length="10" not-null="true" />
+        </property>
+        <property name="xsspsKey" type="string">
+            <column name="xssps_key" length="64" />
+        </property>
+        <property name="triggerType" type="string">
+            <column name="trigger_type" not-null="true" />
+        </property>
+        <property name="triggerRegProbability" type="big_decimal">
+            <column name="trigger_reg_probability" precision="5" scale="4" not-null="true" />
+        </property>
+        <property name="adminStatus" type="int">
+            <column name="admin_status" not-null="true" />
+        </property>
+        <property name="autoToggle" type="int">
+            <column name="auto_toggle" not-null="true" />
+        </property>
+        <property name="autoEnableTime" type="java.lang.Integer">
+            <column name="auto_enable_time" />
+        </property>
+        <property name="autoDisableTime" type="java.lang.Integer">
+            <column name="auto_disable_time" />
+        </property>
+        <property name="lastStatus" type="string">
+            <column name="last_status" />
+        </property>
+        <property name="lastStatusChangeTime" type="timestamp">
+            <column name="last_status_change_time" length="19" />
+        </property>
+        <property name="lastTriggerTime" type="timestamp">
+            <column name="last_trigger_time" length="19" />
+        </property>
+        <property name="lastTamperTime" type="timestamp">
+            <column name="last_tamper_time" length="19" />
+        </property>
+        <property name="lastModifyTime" type="timestamp">
+            <column name="last_modify_time" length="19" />
+        </property>
+        <property name="createdTime" type="timestamp">
+            <column name="created_time" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
